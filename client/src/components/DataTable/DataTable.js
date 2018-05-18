@@ -5,6 +5,20 @@ import './DataTable.css';
 
 
 class DataTable extends Component {
+  constructor(props){
+    super();
+    this.state = {
+      arr: props
+    }
+  }
+
+  componentDidMount(){
+    let incomingDataArr = this.state.arr.data
+    console.log(incomingDataArr);
+  }
+
+
+
   render(){
       return(
             <div className="col-8 px-0 dtable">
@@ -25,6 +39,8 @@ class DataTable extends Component {
                             </tr>
                         </thead>
 
+                        {/* TODO: code up dynamic result page */}
+{/*
                         <tbody>
                             <tr>
                                 <th scope="row">1</th>
@@ -54,7 +70,7 @@ class DataTable extends Component {
                                 <td>Otto</td>
                             </tr>
                         </tbody>
-
+*/}
                     </table>
 
               </div>

@@ -13,12 +13,12 @@ class Header extends Component {
     }
   }
 
-  componentDidMount(){
-    fetch('/api/test').then( res => res.json())
-                      .then( data => {
-                        this.setState({stuff: data}, () => console.log(`data: ${data.test}`))
-                      })
-  }
+  // componentDidMount(){
+  //   fetch('/api/test').then( res => res.json())
+  //                     .then( data => {
+  //                       this.setState({stuff: data}, () => console.log(`data: ${data.test}`))
+  //                     })
+  // }
 
 
   render() {

@@ -16,6 +16,29 @@ class SearchMenu extends Component {
       shape: "",
     }
 
+    // Test dataArray
+    dataArray = [{
+      datetime: "",
+      city: "",
+      state: "",
+      country: "",
+      shape: "",
+    }, {
+      datetime: "",
+      city: "",
+      state: "",
+      country: "",
+      shape: "",
+    }, {
+      datetime: "",
+      city: "",
+      state: "",
+      country: "",
+      shape: "",
+    }]
+
+
+    /* Input field submission handlers*/
     handleDateTime = event =>{
         this.setState({ datetime: event.target.value })
     }
@@ -38,6 +61,17 @@ class SearchMenu extends Component {
     }
 
 
+    /* Button submission handler */
+    handleButtonSubmission = () => {
+      let userQuery = JSON.stringify(this.state)
+      console.log("Button clicked");
+      fetch(`api/${userQuery}`)
+          .then(res => res.json())
+          .then(data => {
+            console.log(data);
+          })
+    }
+
 
 
     render(){
@@ -51,10 +85,11 @@ class SearchMenu extends Component {
                         <Input className="mb-4 extraMargin" label="State" onChange={this.handleStateInput} value={this.state.state}/>
                         <Input className="mb-4 extraMargin" label="Country" onChange={this.handleCountryInput} value={this.state.country}/>
                         <Input className="mb-4 extraMargin" label="Shape" onChange={this.handleShapeInput} value={this.state.shape}/>
-                    <Button>Search for Aliens</Button>
+                    <Button onClick={this.handleButtonSubmission}>Search for Aliens</Button>
                   </div>
               </div>
-              <DataTable />
+              {/* Data Table component*/}
+              <DataTable data={this.dataArray}/>
            </div>
         )
     }
