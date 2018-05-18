@@ -12,10 +12,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-          <div className="row w-100 mx-0 bottomComponents">
               <SearchMenu />
-              <DataTable />
-          </div>
       </div>
     );
   }

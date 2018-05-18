@@ -15,7 +15,6 @@ class DataTable extends Component {
 
                         <thead>
                             <tr>
-                            {/*Table definition header*/}
                                 <th>#</th>
                                 <th>Date/Time</th>
                                 <th>City</th>

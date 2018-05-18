@@ -18,3 +18,7 @@
 label{
   color: black !important;
 }
+
+.bottomComponents{
+  height: 100% !important;
+}

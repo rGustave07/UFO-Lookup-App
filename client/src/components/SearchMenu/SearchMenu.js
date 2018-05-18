@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'mdbreact/dist/css/mdb.css';
 import './SearchMenu.css';
+import DataTable from '../DataTable/DataTable';
 
 import { Button, Input, FormInline } from 'mdbreact';
 
@@ -41,6 +42,7 @@ class SearchMenu extends Component {
 
     render(){
         return(
+          <div className="row w-100 mx-0 bottomComponents">
               <div className="col-4 px-0 mx-0 menu">
                   <div id="inputNavigation">
                     <h1> Search the Cosmos </h1>
@@ -52,6 +54,8 @@ class SearchMenu extends Component {
                     <Button>Search for Aliens</Button>
                   </div>
               </div>
+              <DataTable />
+           </div>
         )
     }
 }
