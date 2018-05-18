@@ -1,0 +1,23 @@
+#topPanel{
+  background-image: url("../../images/spaceman.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 900px;
+}
+
+.cardText{
+  font-size: 50px;
+  color: black !important;
+}
+
+.cardSubText{
+  font-size: 25px !important;
+  color: black !important;
+}
+
+.headerCard{
+  background-color: #DCDCDC;
+  position: relative;
+  top: 600px;
+  width: 50%;
+}

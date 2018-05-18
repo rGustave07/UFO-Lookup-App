@@ -1,0 +1,31 @@
+{
+  "name": "ufo-lookup-app",
+  "version": "1.0.0",
+  "description": "An app for UFO lookups",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js",
+    "server": "nodemon server.js",
+    "client": "cd client && npm start",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rGustave07/UFO-Lookup-App.git"
+  },
+  "author": "Ritter Gustave",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rGustave07/UFO-Lookup-App/issues"
+  },
+  "homepage": "https://github.com/rGustave07/UFO-Lookup-App#readme",
+  "dependencies": {
+    "concurrently": "^3.5.1",
+    "express": "^4.16.3",
+    "mongoose": "^5.1.1",
+    "npm": "^6.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.4"
+  }
+}

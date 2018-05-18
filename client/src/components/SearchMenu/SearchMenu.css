@@ -1,0 +1,20 @@
+.menu{
+  height: 100%;
+}
+
+#inputNavigation{
+  padding: 50px;
+  background-color: #DCDCDC;
+}
+
+.extraMargin{
+  margin-bottom: 50px !important;
+}
+
+.btn-default{
+  background-color: black !important;
+}
+
+label{
+  color: black !important;
+}
