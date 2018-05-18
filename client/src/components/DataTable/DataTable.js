@@ -39,7 +39,10 @@ class DataTable extends Component {
                             </tr>
                         </thead>
 
+                        <tbody>
                         {/* TODO: code up dynamic result page */}
+                        
+                        </tbody>
 {/*
                         <tbody>
                             <tr>

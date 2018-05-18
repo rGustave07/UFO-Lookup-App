@@ -4,7 +4,11 @@ const express = require("express");
 const app = express();
 const PORT = 5000;
 
+let createQueryObject = oldobj => {
 
+}
+
+// Query.prototype.find in mongo documentation
 app.get("/api/:data", ( req, res ) => {
   let userQuery = req.params.data
   console.log(userQuery);

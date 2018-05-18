@@ -89,6 +89,7 @@ class SearchMenu extends Component {
                   </div>
               </div>
               {/* Data Table component*/}
+              {/* TODO: data should be returning results from server */}
               <DataTable data={this.dataArray}/>
            </div>
         )
