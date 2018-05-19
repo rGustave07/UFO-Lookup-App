@@ -28,7 +28,7 @@ class Header extends Component {
             <CardBody>
               <div className="headerCard mx-auto rounded">
                   <CardTitle className="cardText">UFO sightings Database</CardTitle>
-                  <CardText className="cardSubText z-depth-5">Crack open a cold one and search our database for creepy UFO sightings</CardText>
+                  <CardText className="cardSubText  z-depth-5">Crack open a cold one and search our database for creepy UFO sightings</CardText>
               </div>
             </CardBody>
         </Card>
