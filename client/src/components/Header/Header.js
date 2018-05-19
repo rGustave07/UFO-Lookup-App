@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'mdbreact/dist/css/mdb.css';
 import './Header.css';
 
-import { Button, Card, CardBody, CardImage, CardTitle, CardText } from 'mdbreact';
+import {  Card, CardBody, CardTitle, CardText } from 'mdbreact';
 
 class Header extends Component {
   constructor(){

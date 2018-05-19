@@ -6,15 +6,15 @@ import './DataTable.css';
 
 class DataTable extends Component {
   constructor(props){
-    super();
+    super(props);
     this.state = {
       arr: props
     }
+
   }
 
-  componentDidMount(){
-    let incomingDataArr = this.state.arr.data
-    console.log(incomingDataArr);
+  componentWillReceiveProps(){
+    console.log(this.state.arr);
   }
 
 
@@ -41,7 +41,7 @@ class DataTable extends Component {
 
                         <tbody>
                         {/* TODO: code up dynamic result page */}
-                        
+
                         </tbody>
 {/*
                         <tbody>

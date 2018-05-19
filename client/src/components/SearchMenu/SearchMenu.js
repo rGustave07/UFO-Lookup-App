@@ -4,7 +4,7 @@ import 'mdbreact/dist/css/mdb.css';
 import './SearchMenu.css';
 import DataTable from '../DataTable/DataTable';
 
-import { Button, Input, FormInline } from 'mdbreact';
+import { Button, Input } from 'mdbreact';
 
 class SearchMenu extends Component {
 
@@ -14,28 +14,8 @@ class SearchMenu extends Component {
       state: "",
       country: "",
       shape: "",
+      resultArr: []
     }
-
-    // Test dataArray
-    dataArray = [{
-      datetime: "",
-      city: "",
-      state: "",
-      country: "",
-      shape: "",
-    }, {
-      datetime: "",
-      city: "",
-      state: "",
-      country: "",
-      shape: "",
-    }, {
-      datetime: "",
-      city: "",
-      state: "",
-      country: "",
-      shape: "",
-    }]
 
 
     /* Input field submission handlers*/
@@ -63,13 +43,24 @@ class SearchMenu extends Component {
 
     /* Button submission handler */
     handleButtonSubmission = () => {
+      let returnArr = "";
       let userQuery = JSON.stringify(this.state)
       console.log("Button clicked");
       fetch(`api/${userQuery}`)
           .then(res => res.json())
           .then(data => {
+            // this.setState({ resultArr: data })
+            // console.log(this.state.resultArr);
             console.log(data);
+            returnArr = data
           })
+      if (returnArr) {
+         return returnArr 
+      }
+    }
+
+    componentDidMount(){
+        this.handleButtonSubmission()
     }
 
 
@@ -80,17 +71,17 @@ class SearchMenu extends Component {
               <div className="col-4 px-0 mx-0 menu">
                   <div id="inputNavigation">
                     <h1> Search the Cosmos </h1>
-                        <Input className="mb-4 extraMargin" label="Date/Time" onChange={this.handleDateTime} value={this.state.datetime}/>
+                        <Input disabled className="mb-4 extraMargin" label="Date/Time" onChange={this.handleDateTime} value={this.state.datetime}/>
                         <Input className="mb-4 extraMargin" label="City" onChange={this.handleCity} value={this.state.city}/>
                         <Input className="mb-4 extraMargin" label="State" onChange={this.handleStateInput} value={this.state.state}/>
                         <Input className="mb-4 extraMargin" label="Country" onChange={this.handleCountryInput} value={this.state.country}/>
-                        <Input className="mb-4 extraMargin" label="Shape" onChange={this.handleShapeInput} value={this.state.shape}/>
+                        <Input disabled className="mb-4 extraMargin" label="Shape" onChange={this.handleShapeInput} value={this.state.shape}/>
                     <Button onClick={this.handleButtonSubmission}>Search for Aliens</Button>
                   </div>
               </div>
               {/* Data Table component*/}
               {/* TODO: data should be returning results from server */}
-              <DataTable data={this.dataArray}/>
+              <DataTable data={this.handleButtonSubmission()}/>
            </div>
         )
     }
