@@ -45,7 +45,6 @@ app.get("/api/:data", ( req, res ) => {
                if (err) {
                   console.log(err);
               } else {
-                  console.log(docs);
                   res.json(docs)
               }
            })

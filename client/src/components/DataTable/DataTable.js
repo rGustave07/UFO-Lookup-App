@@ -4,22 +4,9 @@ import 'mdbreact/dist/css/mdb.css';
 import './DataTable.css';
 
 
-class DataTable extends Component {
-  constructor(props){
-    super(props);
-    this.state = {
-      arr: props
-    }
+const DataTable = props => {
+  console.log(props);
 
-  }
-
-  componentWillReceiveProps(){
-    console.log(this.state.arr);
-  }
-
-
-
-  render(){
       return(
             <div className="col-8 px-0 dtable">
               <div className="innerContent">
@@ -79,7 +66,7 @@ class DataTable extends Component {
               </div>
             </div>
       )
-  }
+
 }
 
 export default DataTable;

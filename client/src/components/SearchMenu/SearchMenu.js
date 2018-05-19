@@ -43,24 +43,15 @@ class SearchMenu extends Component {
 
     /* Button submission handler */
     handleButtonSubmission = () => {
-      let returnArr = "";
       let userQuery = JSON.stringify(this.state)
       console.log("Button clicked");
       fetch(`api/${userQuery}`)
           .then(res => res.json())
           .then(data => {
-            // this.setState({ resultArr: data })
-            // console.log(this.state.resultArr);
-            console.log(data);
-            returnArr = data
+            let array = data;
+            this.setState({resultArr: array})
+            console.log(this.state.resultArr);
           })
-      if (returnArr) {
-         return returnArr 
-      }
-    }
-
-    componentDidMount(){
-        this.handleButtonSubmission()
     }
 
 
@@ -81,7 +72,7 @@ class SearchMenu extends Component {
               </div>
               {/* Data Table component*/}
               {/* TODO: data should be returning results from server */}
-              <DataTable data={this.handleButtonSubmission()}/>
+              <DataTable data={this.state.resultArr}/>
            </div>
         )
     }
