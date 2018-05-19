@@ -1,7 +1,10 @@
 .dtable{
   background-color: #D3D3D3;
+  max-height: 672px;
 }
 
 .innerContent{
   padding: 50px;
+  overflow: auto !important;
+  max-height: 100% !important
 }

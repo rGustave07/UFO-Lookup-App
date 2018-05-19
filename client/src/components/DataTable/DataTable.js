@@ -5,8 +5,17 @@ import './DataTable.css';
 
 
 const DataTable = props => {
-  console.log(props);
-
+  let draw = props.data.map( sighting => {
+    return(
+      <tr>
+        <td>{sighting.datetime}</td>
+        <td>{sighting.city}</td>
+        <td>{sighting.state}</td>
+        <td>{sighting.country}</td>
+        <td>{sighting.comments}</td>
+      </tr>
+    )
+  })
       return(
             <div className="col-8 px-0 dtable">
               <div className="innerContent">
@@ -16,51 +25,18 @@ const DataTable = props => {
 
                         <thead>
                             <tr>
-                                <th>#</th>
                                 <th>Date/Time</th>
                                 <th>City</th>
                                 <th>State</th>
                                 <th>Country</th>
-                                <th>Shape</th>
                                 <th>Comments</th>
                             </tr>
                         </thead>
 
                         <tbody>
-                        {/* TODO: code up dynamic result page */}
+                          {draw}
+                        </tbody>
 
-                        </tbody>
-{/*
-                        <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>Otto</td>
-                            </tr>
-                            <tr>
-                            <th scope="row">3</th>
-                                <td>Larry</td>
-                                <td>the Bird</td>
-                                <td>@twitter</td>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>Otto</td>
-                            </tr>
-                        </tbody>
-*/}
                     </table>
 
               </div>
