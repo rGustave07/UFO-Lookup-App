@@ -6,8 +6,20 @@ import DataTable from '../DataTable/DataTable';
 
 import { Button, Input } from 'mdbreact';
 
-class SearchMenu extends Component {
+    const initialState = {
+      datetime: "",
+      city: "",
+      state: "",
+      country: "",
+      shape: "",
+      resultArr: []
+    }
 
+class SearchMenu extends Component {
+    constructor(){
+        super();
+        let setupState = initialState;
+    }
     state = {
       datetime: "",
       city: "",
@@ -43,6 +55,7 @@ class SearchMenu extends Component {
 
     /* Button submission handler */
     handleButtonSubmission = () => {
+
       let userQuery = JSON.stringify(this.state)
       console.log("Button clicked");
       fetch(`api/${userQuery}`)
@@ -52,6 +65,7 @@ class SearchMenu extends Component {
             this.setState({resultArr: array})
             console.log(this.state.resultArr);
           })
+
     }
 
 
