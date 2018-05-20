@@ -6,20 +6,8 @@ import DataTable from '../DataTable/DataTable';
 
 import { Button, Input } from 'mdbreact';
 
-    const initialState = {
-      datetime: "",
-      city: "",
-      state: "",
-      country: "",
-      shape: "",
-      resultArr: []
-    }
-
 class SearchMenu extends Component {
-    constructor(){
-        super();
-        let setupState = initialState;
-    }
+
     state = {
       datetime: "",
       city: "",
@@ -58,10 +46,10 @@ class SearchMenu extends Component {
         let datetime = this.state.datetime.replace(/\//g, "-")
         let obj = {
             datetime: datetime,
-            city: this.state.city,
-            state: this.state.state,
-            country: this.state.country,
-            shape: this.state.shape,
+            city: this.state.city.toLowerCase(),
+            state: this.state.state.toLowerCase(),
+            country: this.state.country.toLowerCase(),
+            shape: this.state.shape.toLowerCase(),
         }
       let userQuery = JSON.stringify(obj)
       console.log("Button clicked");
@@ -83,7 +71,7 @@ class SearchMenu extends Component {
               <div className="col-4 px-0 mx-0 menu">
                   <div id="inputNavigation">
                     <h1> Search the Cosmos </h1>
-                        <Input className="mb-4 extraMargin" label="Date/Time" onChange={this.handleDateTime} value={this.state.datetime}/>
+                        <Input className="mb-4 extraMargin" hint="Example: 1/1/2015" label="Date/Time" onChange={this.handleDateTime} value={this.state.datetime}/>
                         <Input className="mb-4 extraMargin" label="City" onChange={this.handleCity} value={this.state.city}/>
                         <Input className="mb-4 extraMargin" label="State" onChange={this.handleStateInput} value={this.state.state}/>
                         <Input className="mb-4 extraMargin" label="Country" onChange={this.handleCountryInput} value={this.state.country}/>

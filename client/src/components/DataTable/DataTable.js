@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'mdbreact/dist/css/mdb.css';
 import './DataTable.css';
 
 
 const DataTable = props => {
-  let draw = props.data.map( sighting => {
+  let displayResults = props.data.map( sighting => {
     return(
       <tr>
         <td>{sighting.datetime}</td>
@@ -34,7 +34,7 @@ const DataTable = props => {
                         </thead>
 
                         <tbody>
-                          {draw}
+                          {displayResults}
                         </tbody>
 
                     </table>
