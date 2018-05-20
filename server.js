@@ -25,7 +25,7 @@ db.once('open', () =>{
 let createQueryObject = oldobj => {
     cleanedObj = {}
     for(let property in oldobj){
-        if (oldobj[property] && property != "resultArr") {
+        if (oldobj[property]) {
             cleanedObj[property] = oldobj[property]
         }
     }
@@ -35,8 +35,8 @@ let createQueryObject = oldobj => {
 app.get("/api/:data", ( req, res ) => {
     let userQuery = JSON.parse(req.params.data)
     let queryObj = createQueryObject(userQuery)
+    if(queryObj.datetime) queryObj.datetime = queryObj.datetime.replace(/\-/g, "/");
     console.log(queryObj);
-    let returnArr;
     db.collection('data').find(queryObj, (err, cursor) =>{
         if (err) {
            console.log(err);

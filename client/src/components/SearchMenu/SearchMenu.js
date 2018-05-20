@@ -55,8 +55,15 @@ class SearchMenu extends Component {
 
     /* Button submission handler */
     handleButtonSubmission = () => {
-
-      let userQuery = JSON.stringify(this.state)
+        let datetime = this.state.datetime.replace(/\//g, "-")
+        let obj = {
+            datetime: datetime,
+            city: this.state.city,
+            state: this.state.state,
+            country: this.state.country,
+            shape: this.state.shape,
+        }
+      let userQuery = JSON.stringify(obj)
       console.log("Button clicked");
       fetch(`api/${userQuery}`)
           .then(res => res.json())
@@ -76,7 +83,7 @@ class SearchMenu extends Component {
               <div className="col-4 px-0 mx-0 menu">
                   <div id="inputNavigation">
                     <h1> Search the Cosmos </h1>
-                        <Input disabled className="mb-4 extraMargin" label="Date/Time" onChange={this.handleDateTime} value={this.state.datetime}/>
+                        <Input className="mb-4 extraMargin" label="Date/Time" onChange={this.handleDateTime} value={this.state.datetime}/>
                         <Input className="mb-4 extraMargin" label="City" onChange={this.handleCity} value={this.state.city}/>
                         <Input className="mb-4 extraMargin" label="State" onChange={this.handleStateInput} value={this.state.state}/>
                         <Input className="mb-4 extraMargin" label="Country" onChange={this.handleCountryInput} value={this.state.country}/>
